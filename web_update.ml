@@ -57,9 +57,9 @@ let update_end = "\n" ^ "						</div>";;
 let make_update ~title ~description ~page ~update_no =
 	let open Basic in
 	let (update : json) = `Assoc [ ("Title", `String title); 
-																 ("Description", `String description); 
-																 ("Page", `Int page); 
-																 ("Update Number", `Int update_no)] 
+				       ("Description", `String description); 
+	           		       ("Page", `Int page); 
+			  	       ("Update Number", `Int update_no)] 
 	in
 	let update = pretty_to_string update in (*convert to string*)
 	let oc = open_out_gen [Open_creat; Open_text; Open_append] 0o666 "updates.json" in
